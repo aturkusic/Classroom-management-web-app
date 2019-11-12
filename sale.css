@@ -1,0 +1,138 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.glavni {
+    width: 36%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.meni {
+    width: 100%;
+    background-color: cornflowerblue;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 15%;
+    position: relative;
+    bottom: 35px;
+    
+}
+
+#slika {
+    width: 70px;
+    height: 70px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.meni ul {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+
+.meni ul li {
+    list-style-type: none;
+    display: inline;
+    padding: 10px;
+}
+
+.lista li a:hover {
+    text-decoration: none;
+}
+
+.meni ul li:nth-child(2) a {
+    text-decoration: none;
+}
+
+.sadrzaj {
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 15px 10px 10px;
+    background-color: cornflowerblue;
+}
+ 
+.tabelaSala {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 2px solid darkgrey;
+    border-style: ridge;
+}
+
+.headerSprat {
+    background-color: darkgrey;
+    height: 50px;
+    text-align: center;
+}
+
+.headerRedni {
+    background-color: lightgray;
+    text-align: left;
+    padding: 5px;
+}
+
+.zauzetaSala {
+    background-color: orangered;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.slobodnaSala {
+    background-color: greenyellow;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.sala {
+    background-color: white ;
+    width: 40px;
+    height: 35px;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+}
+
+.kancelarija {
+    background-color: rebeccapurple;
+    text-align: left;
+    vertical-align: top;
+    padding: 4px;
+}
+
+#redni {
+    vertical-align: bottom;
+}
+
+#prvaCelija {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .meni ul li {
+        list-style-type: none;
+        display: list-item;
+    }
+
+    .headerSprat {
+        display: none;
+    }
+    
+    .headerRedni {
+        display: none;
+    }
+
+    .tabelaSala {
+        margin: 20px;
+    }
+
+   }

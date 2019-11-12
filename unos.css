@@ -1,0 +1,55 @@
+
+.glavniDiv {
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+div.meni ul li:nth-child(2) a {
+    text-decoration: underline;
+}
+
+.meni ul li:nth-child(3) a {
+    text-decoration: none;
+}
+
+.meni ul li:nth-child(3) a {
+    text-decoration: none;
+}
+
+.forma {
+   text-align: center;
+   width: 100%;
+}
+
+.forma  label {
+    display: inline-block;
+    width: 150px;
+    padding: 10px;
+    text-align: left;
+}
+
+#dugme {
+    margin-left: 130px;
+}
+
+@media only screen and (max-width: 600px) {
+    .forma  label {
+        display: list-item;
+        list-style-type: none;
+        margin: 0 auto;
+        width: 150px;
+        padding: 10px;
+        text-align: left;
+    }
+    .forma input {
+        width: 140px;
+    }
+    .forma input[type=submit] {
+        position: relative;
+        right: 15px;
+        bottom: 15px;
+        width: 50px;
+    }
+    
+}

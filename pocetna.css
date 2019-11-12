@@ -1,0 +1,47 @@
+
+.sadrzaj {
+   max-width: 800px;
+}
+
+.meni ul li:nth-child(1) a {
+  text-decoration: none;
+}
+
+.meni ul li:nth-child(2) a {
+  text-decoration: underline;
+}
+
+.grid-container {
+    display: grid;
+    padding-left: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 0.75em;
+}
+
+  img {
+    width: 200px;
+    height: 200px;
+}
+
+  @media only screen and (max-width: 600px) {
+    .sadrzaj {
+      min-width: 170px;
+    }
+
+    .meni {
+      min-width: 190px;
+
+    }
+
+   .grid-container {
+       grid-template-columns: repeat(1, 200px);
+       padding-left: 5px;
+    }
+
+    img {
+    width: 160px;
+    height: 160px;
+    }
+  }
+
+

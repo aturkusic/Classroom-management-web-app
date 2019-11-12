@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<HTML lang="en">
+
+<HEAD>
+    <TITLE>Spirala 1, Zadatak 4</TITLE>
+    <link rel="stylesheet" type="text/css" href="sale.css">
+    <link rel="stylesheet" type="text/css" href="rezervacija.css">
+    <meta charset="utf-8">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+</HEAD>
+
+<BODY>
+    <div class="glavni">
+        <div class="meni">
+            <div class="logo">
+                <img id="slika" src="logo/etfLogo.png" alt="Logo Etfa">
+            </div>
+            <ul class="lista">
+                <li><a href="pocetna.html">Početna</a></li>
+                <li><a href="sale.html">Sale</a></li>
+                <li><a href="unos.html">Unos</a></li>
+                <li><a href="rezervacija.html">Rezervacije</a></li>
+                <li><a href="#">Osobe</a></li>
+            </ul>
+        </div>
+        <div class="sadrzaj">
+            <div class="podaci">
+                <label class="inputi" for="dropLista">Sale: </label>
+                <select id="dropLista" name="dropLista">
+                    <option value="--" selected>--</option>
+                    <option value="1">1-01</option>
+                    <option value="2">1-02</option>
+                    <option value="3">1-03</option>
+                    <option value="4">1-04</option>
+                </select>
+                <label class="inputi" for="checkBox">Periodična</label>
+                <input id="checkBox" class="inputi" type="checkBox" name="checkBox">
+                <label class="inputi" for="pocetak">Pocetak: </label>
+                <input id="pocetak" class="inputi" type="time" name="pocetak">
+                <label class="inputi" for="kraj">Kraj: </label>
+                <input id="kraj" class="inputi" type="time" name="kraj">
+            </div>
+            <div class="kalendar">
+                <div class="imeMjeseca">
+                    <b id="imeMjeseca">Novembar</b>
+                </div>
+                <div class="dani">
+                    <div class="daniUSedmici">
+                        <div class="box">
+                            <p class="boxText">PON</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">UTO</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">SRI</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">CET</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">PET</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">SUB</p>
+                        </div>
+                        <div class="box">
+                            <p class="boxText">NED</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kal">
+                    <div class="skrivenoPolje rotirano"></div>
+                    <div class="skrivenoPolje rotirano"></div>
+                    <div class="skrivenoPolje rotirano"></div>
+                    <div class="skrivenoPolje rotirano"></div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">1</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">2</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">3</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">4</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">5</p>
+                        <div class="zauzeta"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">6</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">7</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">8</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">9</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje">
+                        <p class="danUMjesecu">10</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">11</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">12</p>
+                        <div class="zauzeta"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">13</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">14</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">15</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">16</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">17</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">18</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">19</p>
+                        <div class="zauzeta"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">20</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">21</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">22</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">23</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">24</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">25</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">26</p>
+                        <div class="zauzeta"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">27</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">28</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">29</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="neskrivenoPolje rotirano">
+                        <p class="danUMjesecu">30</p>
+                        <div class="slobodna"></div>
+                    </div>
+                    <div class="skrivenoPolje rotirano"></div>
+                </div>
+            </div>
+            <div class="dugmadi">
+                <button class="prethodniBtn" type="button">Prethodni</button>
+                <button class="sljedeciBtn" type="button">Sljedeći</button>
+            </div>
+        </div>
+    </div>
+</BODY>
+
+</HTML>
