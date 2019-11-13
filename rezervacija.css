@@ -116,12 +116,18 @@ input[type=time] {
         width: 36%;
     }
 
+    .meni {
+        min-width: 190px;
+    }
+
     .sadrzaj {
         margin-top: 10px;
         padding: 5px;
+        min-width: 180px;
     }
 
     .podaci {
+        max-width: 190px;
         display: list-item;
         list-style-type: none;
     }
@@ -129,7 +135,7 @@ input[type=time] {
     .inputi {
         margin: 10px;
     }
-
+    
     .daniUSedmici {
         display: grid;
         padding-left: 0.25em;
@@ -152,7 +158,7 @@ input[type=time] {
 
     .prethodniBtn {
         height: 40px;
-        width: 80px;
+        width: 70px;
         margin: 5px;
         position: relative;
         bottom: 10px;
@@ -160,10 +166,10 @@ input[type=time] {
     
     .sljedeciBtn {
         height: 40px;
-        width: 80px;
+        width: 70px;
         float: right;
         position: relative;
-        bottom: 65px;
+        bottom: 15px;
         left: 5px;
     }
 }

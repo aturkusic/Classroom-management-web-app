@@ -1,0 +1,145 @@
+@objects
+ glavni .glavni
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ tabelaSala .tabelaSala
+ lista .lista
+ li .lista li
+ list_item-* .lista li a
+ slika #slika
+ podaci .podaci
+ lista #dropLista
+ opcija-* .opcija
+ labeli .labeli
+ checkBox #checkBox
+ pocetakInput #pocetak
+ krajInput #kraj
+ kalendar .kalendar
+ imeMjeseca .imeMjeseca
+ imeMjesecaText #imeMjeseca
+ daniUSedmiciDiv .daniUSedmici
+ box-* .box
+ box .box
+ kal .kal
+ skrivenoPolje .skrivenoPolje
+ neskriveno_Polje-* .neskrivenoPolje
+ slobodna .slobodna
+ zauzeta .zauzeta
+ pretBtn .prethodniBtn
+ sljedBtn .sljedeciBtn
+ dugmadi .dugmadi
+ rotirano .rotirano
+ 
+= Header section =
+ glavni:
+  width < 600 px
+ meni:
+  width 95 to 100 % of glavni/width
+  inside screen 50px top
+  above sadrzaj 10px
+ li:
+  css display is "list-item"
+ list_item-2:
+  text contains "Sale"
+ list_item-3:
+  text contains "Unos"
+ list_item-4:
+  css text-decoration-line is "none"
+  text contains "Rezervacije"
+ list_item-5:
+  text contains "Osobe"
+ li:
+  css list-style-type is "none"
+ logo:
+  width 70px
+  height 70px
+  inside partly meni -35px top
+ slika:
+  inside partly logo
+ comments:
+  absent
+= Main section =
+ sadrzaj:
+  width 100% of glavni/width
+  css background-color is "rgb(100, 149, 237)"
+ podaci:
+  above kalendar
+  css list-style-type is "none"
+  css display is "list-item"
+ lista:
+  above checkBox 10 to 20 px
+  count any opcija-* is > 1
+ labeli:
+  css padding-left is "10px"
+ checkBox:
+  above pocetakInput
+ pocetakInput, krajInput:
+  width 100 to 150 px
+ kalendar:
+  below podaci 5 to 20px
+  css background-color is "rgb(105, 163, 221)"
+ imeMjeseca:
+  inside kalendar 10 to 15 px top
+ imeMjesecaText:
+  inside kalendar
+ daniUSedmiciDiv:
+  css display is "grid"
+  left-of kal
+ box-1:
+  text contains "PON"
+  css text-align is "start"
+ box-2:
+  text contains "UTO"
+  css text-align is "start"
+ box-3:
+  text contains "SRI"
+  css text-align is "start"
+ box-4:
+  text contains "CET"
+  css text-align is "start" 
+ box-5:
+  text contains "PET"
+  css text-align is "start"
+ box-6:
+  text contains "SUB"
+  css text-align is "start"
+ box-7:
+  text contains "NED"
+  css text-align is "start"
+ box-1:
+  aligned vertically all box-2
+  aligned vertically all box-3
+  aligned vertically all box-4
+  aligned vertically all box-5
+  aligned vertically all box-6
+  aligned vertically all box-7
+ box:
+  width 40 to 60 px
+  inside daniUSedmiciDiv
+ kal:
+  inside kalendar
+  css display is "grid"
+  count visible neskriveno_Polje-* is 7
+ skrivenoPolje:
+  absent
+ rotirano:
+  absent
+ zauzeta:
+  css background-color is "rgb(255, 69, 0)"
+ pretBtn:
+  inside sadrzaj
+  below kal
+  left-of sljedBtn
+  width 70 px
+  height 40 px
+ sljedBtn:
+  inside sadrzaj
+  below kal
+  width 70 px
+  height 40 px
+ dugmadi:
+  below kal
+
+
+ 

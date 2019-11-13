@@ -1,0 +1,25 @@
+{
+  "testId" : "1-sale.gspec",
+  "name" : "sale.gspec",
+  "report" : {
+    "nodes" : [ {
+      "name" : "Mutation test",
+      "status" : "info",
+      "nodes" : [ {
+        "name" : "check  sale.gspec --url http://localhost/sale.html --size 1024x768 --htmlreport mutacijeizvjestaji",
+        "status" : "info",
+        "nodes" : [ {
+          "name" : "NullPointerException: ",
+          "status" : "error",
+          "time" : 1573604415099,
+          "stacktrace" : "java.lang.NullPointerException\r\n\tat com.galenframework.browser.mutation.StalePageElement.<init>(StalePageElement.java:29)\r\n\tat com.galenframework.browser.mutation.MutationRecordPageProxy.invoke(MutationRecordPageProxy.java:60)\r\n\tat com.sun.proxy.$Proxy1.getSpecialObject(Unknown Source)\r\n\tat com.galenframework.validation.PageValidation.findPageElement(PageValidation.java:91)\r\n\tat com.galenframework.validation.specs.SpecValidationAbsent.check(SpecValidationAbsent.java:28)\r\n\tat com.galenframework.validation.specs.SpecValidationAbsent.check(SpecValidationAbsent.java:24)\r\n\tat com.galenframework.validation.PageValidation.check(PageValidation.java:70)\r\n\tat com.galenframework.validation.PageValidation.check(PageValidation.java:60)\r\n\tat com.galenframework.validation.SectionValidation.checkObject(SectionValidation.java:187)\r\n\tat com.galenframework.validation.SectionValidation.checkObjects(SectionValidation.java:97)\r\n\tat com.galenframework.validation.SectionValidation.checkSection(SectionValidation.java:131)\r\n\tat com.galenframework.validation.SectionValidation.checkPageSection(SectionValidation.java:76)\r\n\tat com.galenframework.validation.SectionValidation.check(SectionValidation.java:53)\r\n\tat com.galenframework.api.Galen.checkLayoutForPage(Galen.java:114)\r\n\tat com.galenframework.api.Galen.checkLayout(Galen.java:86)\r\n\tat com.galenframework.api.mutation.GalenMutate.checkAllMutations(GalenMutate.java:56)\r\n\tat com.galenframework.suite.actions.GalenPageActionMutate.execute(GalenPageActionMutate.java:38)\r\n\tat com.galenframework.runner.GalenPageRunner.executeAction(GalenPageRunner.java:84)\r\n\tat com.galenframework.runner.GalenPageRunner.run(GalenPageRunner.java:76)\r\n\tat com.galenframework.runner.GalenBasicTestRunner.runTest(GalenBasicTestRunner.java:76)\r\n\tat com.galenframework.tests.GalenBasicTest.execute(GalenBasicTest.java:55)\r\n\tat com.galenframework.TestRunnable.runTest(TestRunnable.java:75)\r\n\tat com.galenframework.TestRunnable.run(TestRunnable.java:101)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)\r\n\tat java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)\r\n\tat java.base/java.lang.Thread.run(Thread.java:834)\r\n",
+          "type" : "node"
+        } ],
+        "time" : 1573604413484,
+        "type" : "node"
+      } ],
+      "time" : 1573604410110,
+      "type" : "node"
+    } ]
+  }
+}

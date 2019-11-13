@@ -1,0 +1,66 @@
+@objects
+ glavni .glavni
+ meni .meni
+ logo .logo
+ sadrzaj .sadrzaj
+ tabelaSala .tabelaSala
+ lista .lista
+ li .lista li
+ list_item-* .lista li a
+ slika #slika
+ grid .grid-container
+ grid_item .grid-item
+ grid_item-* .grid-item
+ slike img[alt=aki]
+ 
+= Header section =
+ glavni:
+  width < 600px
+ meni:
+  width 95 to 100 % of glavni/width
+  inside screen 50px top
+  above sadrzaj 10px
+ li:
+  css display is "list-item"
+ list_item-1:
+  css text-decoration-line is "none"
+ list_item-2:
+  text contains "Sale"
+ list_item-3:
+  text contains "Unos"
+ list_item-4:
+  text contains "Rezervacije"
+ list_item-5:
+  text contains "Osobe"
+ li:
+  css list-style-type is "none"
+ logo:
+  width 70px
+  height 70px
+  contains slika
+  inside partly meni -35px top
+ comments:
+  absent
+= Main section =
+ sadrzaj:
+  width 90 to 100% of glavni/width
+  css background-color is "rgb(100, 149, 237)"
+ grid:
+  css display is "grid"
+  inside sadrzaj 15 px top
+  count any grid_item-* is 10 
+ slike:
+  inside grid
+  width 160 px
+  height 160 px
+ grid_item-1:
+  aligned vertically all grid_item-2
+  aligned vertically all grid_item-3
+  aligned vertically all grid_item-4
+  aligned vertically all grid_item-5
+  aligned vertically all grid_item-6
+  aligned vertically all grid_item-7
+  aligned vertically all grid_item-8
+  aligned vertically all grid_item-9
+  aligned vertically all grid_item-10
+

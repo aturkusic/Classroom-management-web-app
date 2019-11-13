@@ -13,16 +13,12 @@ div.meni ul li:nth-child(2) a {
     text-decoration: none;
 }
 
-.meni ul li:nth-child(3) a {
-    text-decoration: none;
-}
-
 .forma {
    text-align: center;
    width: 100%;
 }
 
-.forma  label {
+.forma  .label {
     display: inline-block;
     width: 150px;
     padding: 10px;
@@ -34,7 +30,7 @@ div.meni ul li:nth-child(2) a {
 }
 
 @media only screen and (max-width: 600px) {
-    .forma  label {
+    .forma  .label {
         display: list-item;
         list-style-type: none;
         margin: 0 auto;
