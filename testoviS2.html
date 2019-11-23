@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<HTML lang="en">
-
-<HEAD>
-    <TITLE>Spirala 1, Zadatak 4</TITLE>
-    <link rel="stylesheet" type="text/css" href="sale.css">
-    <link rel="stylesheet" type="text/css" href="rezervacija.css">
-    <meta charset="utf-8">
-    <META name="viewport" content="width=device-width, initial-scale=1.0">
-</HEAD>
-
-<BODY>
+<html lang="en">
+ <head>
+   <meta charset="utf-8" />
+   <title>Mocha Tests</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="rezervacija.css" />
+   <link rel="stylesheet" href="sale.css" />
+   <style>
+   td{
+     border: 1px solid black;
+     height: 20px;
+     width: 20px;
+   }
+   </style>
+ </head>
+ <body>
     <div class="glavni">
         <div class="meni">
             <div class="logo">
@@ -222,7 +227,19 @@
             </div>
         </div>
     </div>
-    <script src="kalendar.js"></script>
-</BODY>
-
-</HTML>
+   <div id="mocha"></div>
+ 
+   <script src="https://unpkg.com/chai/chai.js"></script>
+   <script src="https://unpkg.com/mocha/mocha.js"></script>
+ 
+   <script class="mocha-init">
+     mocha.setup('bdd');
+     mocha.checkLeaks();
+   </script>
+   <script src="kalendar.js"></script>
+   <script src="test.js"></script>
+   <script class="mocha-exec">
+     mocha.run();
+   </script>
+ </body>
+</html>
