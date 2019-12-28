@@ -1,4 +1,4 @@
-let Kalendar = (function(){
+Kalendar = (function(){
     var periodicnaZauzeca = [], vanrednaZauzeca = []; 
 
 
@@ -103,22 +103,10 @@ let Kalendar = (function(){
     }
     }());
 
-    var periodicna = [{dan: 4, semestar: "zimski", pocetak: "11:00", kraj: "16:00", naziv: "1-01", predavac: "NN"},
-                      {dan: 3, semestar: "ljetni", pocetak: "11:00", kraj: "15:00", naziv: "1-01", predavac: "NN"}];
-
-    var vanredna = [{datum: "23.11.2019", pocetak: "12:00", kraj: "16:30", naziv: "1-01", predavac: "NN"},
-                    {datum: "21.10.2019", pocetak: "13:00", kraj: "15:30", naziv: "1-01", predavac: "NN"},
-                    {datum: "15.12.2019", pocetak: "13:00", kraj: "15:30", naziv: "1-01", predavac: "NN"},
-                    {datum: "23.2.2019", pocetak: "13:00", kraj: "15:30", naziv: "1-01", predavac: "NN"},
-                    {datum: "7.1.2019", pocetak: "13:00", kraj: "15:30", naziv: "1-01", predavac: "NN"}];
-
-    Kalendar.ucitajPodatke(periodicna, vanredna);
-
     var trenutniMjesec = new Date().getMonth();
     var mjeseci = {Januar:0, Februar:1, Mart:2, April:3, Maj:4, Juni:5, Juli:6, August:7, Septembar:8, Oktobar:9, Novembar:10, Decembar:11};
 
     Kalendar.iscrtajKalendar(document.getElementById("kalendar"), trenutniMjesec);
-
     function ucitajVrijednosti() {
         mjesec = document.getElementById("imeMjeseca").textContent;
         sala = document.getElementById("dropLista").value;
@@ -130,9 +118,10 @@ let Kalendar = (function(){
         Kalendar.iscrtajKalendar(document.getElementById("kalendar"), trenutniMjesec);
         ucitajVrijednosti();
         Kalendar.obojiZauzeca(document.getElementById("kalendar"), mjeseci[mjesec], sala, pocetak, kraj);
+
     });
 
-    document.getElementById("prethodni").addEventListener("click", function() {
+    function prethodniAkcija() {
         document.getElementById("sljedeci").disabled = false;
         if(trenutniMjesec == 1)
             document.getElementById("prethodni").disabled = true;
@@ -141,9 +130,10 @@ let Kalendar = (function(){
         Kalendar.iscrtajKalendar(document.getElementById("kalendar"), trenutniMjesec);
         ucitajVrijednosti();
         Kalendar.obojiZauzeca(document.getElementById("kalendar"), mjeseci[mjesec], sala, pocetak, kraj);
-    });
 
-    document.getElementById("sljedeci").addEventListener("click", function() {
+    }
+
+    function sljedeciAkcija() {
         document.getElementById("prethodni").disabled = false;
         if(trenutniMjesec == 10)
             document.getElementById("sljedeci").disabled = true;
@@ -152,5 +142,6 @@ let Kalendar = (function(){
         Kalendar.iscrtajKalendar(document.getElementById("kalendar"), trenutniMjesec);
         ucitajVrijednosti();
         Kalendar.obojiZauzeca(document.getElementById("kalendar"), mjeseci[mjesec], sala, pocetak, kraj);
-    });
+
+    }
     
