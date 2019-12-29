@@ -23,6 +23,25 @@
     height: 200px;
 }
 
+.prethodniBtn {
+  background: rgb(105, 163, 221);
+  border: 2px solid rgb(13, 74, 167);
+  padding: 0.5em;
+  height: 50px;
+  width: 100px;
+  margin: 0.75em;
+}
+
+.sljedeciBtn {
+  background: rgb(105, 163, 221);
+  border: 2px solid rgb(13, 74, 167);
+  padding: 0.5em;
+  height: 50px;
+  width: 100px;
+  margin: 0.75em;
+  float: right;
+}
+
   @media only screen and (max-width: 600px) {
     .sadrzaj {
       min-width: 170px;

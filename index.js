@@ -107,4 +107,28 @@ app.post("/rezervacija.html", function (req, res) {
     })
 });
 
+app.post("/slike", function (req, res) {
+    var tijelo = req.body;
+    var odgovorJSON = [];
+    fs.readdir(__dirname + "/galerija", function (err, slikeUFolderu) {
+        if (Object.entries(tijelo).length === 0 && tijelo.constructor === Object) { // ako je prazan json na pocetku dodati prve tri slike
+            odgovorJSON.push(slikeUFolderu[0], slikeUFolderu[1], slikeUFolderu[2]);
+            res.json(odgovorJSON);
+            return;
+        }
+        for (var i = 0; i < slikeUFolderu.length; i++) {
+            if (!tijelo.niz.includes(slikeUFolderu[i])) {
+                odgovorJSON.push(slikeUFolderu[i]);
+                if (odgovorJSON.length == 3) 
+                    break;
+            } 
+        }
+        if (slikeUFolderu.length - tijelo.niz.length <= 3) {
+            odgovorJSON.push("nemaViseSlika");
+        }
+
+        res.json(odgovorJSON);
+    });
+});
+
 app.listen(8080);

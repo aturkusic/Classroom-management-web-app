@@ -2,6 +2,7 @@
 <HTML lang="en">
 
 <HEAD>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
     <TITLE>Spirala 1, Zadatak 3</TITLE>
     <link rel="stylesheet" type="text/css" href="sale.css">
     <link rel="stylesheet" type="text/css" href="pocetna.css">
@@ -25,19 +26,18 @@
         </div>
         <div class="sadrzaj">
             <div class="grid-container">
-                <div class="grid-item"><img src="galerija/slika1.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika2.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika3.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika4.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika5.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika6.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika7.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika8.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika9.jpg" alt="aki"></div>
-                <div class="grid-item"><img src="galerija/slika10.jpg" alt="aki"></div>
+                <div class="grid-item"><img id="slika1" onerror="this.onerror=null;"  alt=""></div>
+                <div class="grid-item"><img id="slika2"  onerror="this.onerror=null;" alt=""></div>
+                <div class="grid-item"><img id="slika3" onerror="this.onerror=null;"  alt=""></div>
+            </div>
+            <div class="dugmadi">
+                <button class="prethodniBtn" type="button" id = "prethodne" onclick="prethodneAkcija()">Prethodni</button>
+                <button class="sljedeciBtn" type="button" id = "sljedece" onclick="sljedeceAkcija()">Sljedeći</button>
             </div>
         </div>
     </div>
+    <script src="kalendar.js"></script>
+    <script src="Pozivi.js"></script>
     <script src="pocetna.js"></script>
 </BODY>
 
