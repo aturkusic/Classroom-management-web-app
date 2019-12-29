@@ -82,7 +82,15 @@ Pozivi = (function () {
             dataType: "json",
             success: function (response_data_json) {
                 view_data = response_data_json;
-                nizSlikaZaPrikaz.push(view_data[0], view_data[1], view_data[2]);
+                console.log(view_data);
+                if(view_data.length == 3)
+                    nizSlikaZaPrikaz.push(view_data[0], view_data[1], view_data[2]);
+                else if(view_data.length == 4 && trenutniIndexZandnjePrikazaneSlike == 3) {
+                    document.getElementById("sljedece").disabled = true;
+                    nizSlikaZaPrikaz.push(view_data[0], view_data[1], view_data[2], view_data[3]);
+                } else {
+                    nizSlikaZaPrikaz.push(view_data[0], view_data[1], view_data[2], view_data[3]);
+                }
                 if(view_data.includes("nemaViseSlika")) {
                     document.getElementById("sljedece").disabled = true;
                     trenutniIndexZandnjePrikazaneSlike += view_data.length - 1;
@@ -95,19 +103,22 @@ Pozivi = (function () {
                 } else {
                     document.getElementById("prethodne").disabled = false;
                 }
-                console.log(view_data);
                 prikaziSlike(view_data); //Proslijedimo podatke funkciji
             }
         });
     }
 
     function ucitajSlikeImpl(mjestoPoziva) {
+        var filterovana = nizSlikaZaPrikaz.filter(function (el) {
+            return typeof el !== 'undefined';
+          });
+        nizSlikaZaPrikaz = filterovana;
         var zaPromjenu = 0;
         var oduzetDodatIndexa;
-
+        
         if(trenutniIndexZandnjePrikazaneSlike == nizSlikaZaPrikaz.length && mjestoPoziva != "prethodne") {
             ucitajSliku();
-        } else if(mjestoPoziva == "prethodne") {
+        } else if(mjestoPoziva == "prethodne") { //ucitavanje bez ajaksa ukoliko su vec ucitane
             document.getElementById("sljedece").disabled = false; 
             if(nizSlikaZaPrikaz.includes("nemaViseSlika") && ((trenutniIndexZandnjePrikazaneSlike) % 3) != 0) {
                 zaPromjenu = (nizSlikaZaPrikaz.length - 1) % 3;
@@ -122,7 +133,7 @@ Pozivi = (function () {
             trenutniIndexZandnjePrikazaneSlike -= zaPromjenu;
             if(trenutniIndexZandnjePrikazaneSlike == 3)
                 document.getElementById("prethodne").disabled = true;
-        } else if(mjestoPoziva == "sljedece") {
+        } else if(mjestoPoziva == "sljedece") { //ucitavanje bez ajaksa ukoliko su vec ucitane
             document.getElementById("prethodne").disabled = false;
             if(nizSlikaZaPrikaz.includes("nemaViseSlika") && ((nizSlikaZaPrikaz.length - 1) - trenutniIndexZandnjePrikazaneSlike) < 3) {
                 zaPromjenu = (nizSlikaZaPrikaz.length - 1) - trenutniIndexZandnjePrikazaneSlike;
@@ -133,7 +144,7 @@ Pozivi = (function () {
             $("#slika2").attr("src", '/galerija/' + nizSlikaZaPrikaz[trenutniIndexZandnjePrikazaneSlike +1]).fadeIn();
             $("#slika3").attr("src", '/galerija/' + nizSlikaZaPrikaz[trenutniIndexZandnjePrikazaneSlike + 2]).fadeIn();
             trenutniIndexZandnjePrikazaneSlike += zaPromjenu;
-            if(trenutniIndexZandnjePrikazaneSlike % 3 != 0) 
+            if(trenutniIndexZandnjePrikazaneSlike % 3 != 0 || (nizSlikaZaPrikaz.length - 1 - trenutniIndexZandnjePrikazaneSlike) == 0) 
                 document.getElementById("sljedece").disabled = true; 
         }
     }

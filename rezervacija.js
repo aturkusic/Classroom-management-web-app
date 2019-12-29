@@ -11,11 +11,16 @@ window.onclick = e => {
             sala = document.getElementById("dropLista").value;
             pocetak = document.getElementById("pocetak").value;
             kraj = document.getElementById("kraj").value;
+            cbPeriodicno = document.getElementById("checkBox").checked;
+            console.log(sala)
+            if(pocetak == "" || kraj == "" || sala == "--") {
+                alert("Neispravni podaci");
+                return;
+            }
             if(pocetak > kraj) {
                 alert("Pocetno vrijeme vece od krajnjeg, molimo ispravite.");
                 return;
             }
-            cbPeriodicno = document.getElementById("checkBox").checked;
             if (e.target.parentNode.getElementsByTagName("div").item(0).className == "zauzeta") {
                 var mjeseci = { Januar: 0, Februar: 1, Mart: 2, April: 3, Maj: 4, Juni: 5, Juli: 6, August: 7, Septembar: 8, Oktobar: 9, Novembar: 10, Decembar: 11 };
                 var dani = { 0: "ponedeljak", 1: "utorak", 2: "srijedu", 3: "cetvrtak", 4: "petak", 5: "subotu", 6: "nedjelju" };

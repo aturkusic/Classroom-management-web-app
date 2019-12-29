@@ -113,6 +113,9 @@ app.post("/slike", function (req, res) {
     fs.readdir(__dirname + "/galerija", function (err, slikeUFolderu) {
         if (Object.entries(tijelo).length === 0 && tijelo.constructor === Object) { // ako je prazan json na pocetku dodati prve tri slike
             odgovorJSON.push(slikeUFolderu[0], slikeUFolderu[1], slikeUFolderu[2]);
+            if (slikeUFolderu.length  == 3) {
+                odgovorJSON.push("nemaViseSlika");
+            }
             res.json(odgovorJSON);
             return;
         }
