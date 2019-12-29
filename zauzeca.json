@@ -10,7 +10,7 @@
         },
         {
             "dan": 3,
-            "semestar": "ljetnji",
+            "semestar": "ljetni",
             "pocetak": "11:00",
             "kraj": "16:00",
             "naziv": "1-01",
@@ -19,6 +19,14 @@
         {
             "dan": 1,
             "semestar": "zimski",
+            "pocetak": "10:00",
+            "kraj": "15:00",
+            "naziv": "1-01",
+            "predavac": "NN"
+        },
+        {
+            "dan": 1,
+            "semestar": "ljetni",
             "pocetak": "10:00",
             "kraj": "15:00",
             "naziv": "1-01",
@@ -54,6 +62,5 @@
             "naziv": "1-01",
             "predavac": "NN"
         }
-        
     ]
 }
