@@ -1,18 +1,26 @@
 {
   "name": "spirala3",
   "version": "1.0.0",
-  "description": "",
-  "main": "kalendar.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "browser-window": "^0.4.0",
     "express": "^4.17.1",
     "express-json": "^1.0.0",
+    "mysql2": "^2.1.0",
     "package.json": "^2.0.1",
-    "pkg.json": "^2.0.7"
-  }
+    "pkg.json": "^2.0.7",
+    "sequelize": "^5.21.3"
+  },
+  "devDependencies": {
+    "mocha": "^7.0.0",
+    "supertest": "^4.0.2"
+  },
+  "description": ""
 }

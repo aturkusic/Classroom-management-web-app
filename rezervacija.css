@@ -112,6 +112,10 @@ input[type=time] {
     float: right;
 }
 
+.dropListaPredavaca {
+    width: 200px;
+}
+
 @media only screen and (max-width: 600px) {
     .glavni {
         width: 36%;

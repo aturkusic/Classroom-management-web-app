@@ -13,13 +13,8 @@ Kalendar = (function () {
         let neskrivenaPolja = kalendarRef.getElementsByClassName("neskrivenoPolje");
         var datum = new Date();
         var godina = datum.getFullYear();
-        //milisekunde od pocetka dana
-        let odbranoPocetnoUMilisekundama = new Date("1970-01-01 " + pocetak).getTime() + 3600000;
-        let odbranoKrajnjeUMilisekundama = new Date("1970-01-01 " + kraj).getTime() + 3600000;
         for (let i = 0; i < periodicnaZauzeca.length; i++) {
-            let periodicnoPocetnoUMili = new Date("1970-01-01 " + periodicnaZauzeca[i].pocetak).getTime() + 3600000;
-            let periodicnoKrajnjeUMili = new Date("1970-01-01 " + periodicnaZauzeca[i].kraj).getTime() + 3600000;
-            if (sala == periodicnaZauzeca[i].naziv && DaLiSePoklapajuTermini(periodicnoPocetnoUMili, periodicnoKrajnjeUMili, odbranoPocetnoUMilisekundama, odbranoKrajnjeUMilisekundama)) {
+            if (sala == periodicnaZauzeca[i].naziv && DaLiSePoklapajuTermini(periodicnaZauzeca[i].pocetak, periodicnaZauzeca[i].kraj, pocetak, kraj)) {
                 let pocetniDan = prviDan(mjesec, godina) - 1;
                 let pocetniIndex = -1;
                 if (periodicnaZauzeca[i].dan >= pocetniDan) pocetniIndex = periodicnaZauzeca[i].dan - pocetniDan;
@@ -40,13 +35,11 @@ Kalendar = (function () {
         }
 
         for (let i = 0; i < vanrednaZauzeca.length; i++) {
-            let vanrednoPocetnoUMili = new Date("1970-01-01 " + vanrednaZauzeca[i].pocetak).getTime() + 3600000;
-            let vanrednoKrajnjeUMili = new Date("1970-01-01 " + vanrednaZauzeca[i].kraj).getTime() + 3600000;
             let datumString = vanrednaZauzeca[i].datum.split(".");
             let danInt = parseInt(datumString[0]);
             let mjesecInt = parseInt(datumString[1]) - 1;
             let godinaInt = parseInt(datumString[2]);
-            if (vanrednaZauzeca[i].naziv == sala && mjesec == mjesecInt && godinaInt == godina && DaLiSePoklapajuTermini(vanrednoPocetnoUMili, vanrednoKrajnjeUMili, odbranoPocetnoUMilisekundama, odbranoKrajnjeUMilisekundama)) {
+            if (vanrednaZauzeca[i].naziv == sala && mjesec == mjesecInt && godinaInt == godina && DaLiSePoklapajuTermini(vanrednaZauzeca[i].pocetak, vanrednaZauzeca[i].kraj, pocetak, kraj)) {
                 neskrivenaPolja[danInt - 1].querySelector("div").classList.remove("slobodna");
                 neskrivenaPolja[danInt - 1].querySelector("div").classList.add("zauzeta");
             }

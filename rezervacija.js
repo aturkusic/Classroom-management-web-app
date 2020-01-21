@@ -1,19 +1,22 @@
-Pozivi.ucitajJSON("zauzeca.json");
 
+Pozivi.ucitajZauzeca();
+Pozivi.ucitajPredavace();
+Pozivi.ucitajSale();
 
 window.onclick = e => {
     if (e.target.className == "danUMjesecu" || e.target.className == "slobodna" || e.target.className == "zauzeta") {
         var confirmProzor = confirm("Da li zelite da rezervisete ovaj termin?");
         if (confirmProzor == true) {
-            var dan, mjesec, sala, pocetak, kraj, cbPeriodicno;
+            var dan, mjesec, sala, pocetak, kraj, cbPeriodicno, idPredavaca, idSala;
             dan = e.target.parentNode.getElementsByTagName("p").item(0).innerText;
             mjesec = document.getElementById("imeMjeseca").textContent;
             sala = document.getElementById("dropLista").value;
+            idSala = document.getElementById("dropLista").selectedIndex + 1;
             pocetak = document.getElementById("pocetak").value;
             kraj = document.getElementById("kraj").value;
             cbPeriodicno = document.getElementById("checkBox").checked;
-            console.log(sala)
-            if(pocetak == "" || kraj == "" || sala == "--") {
+            idPredavaca = document.getElementById("dropListaPredavaca").selectedIndex + 1;
+            if(pocetak == "" || kraj == "") {
                 alert("Neispravni podaci");
                 return;
             }
@@ -39,13 +42,14 @@ window.onclick = e => {
                     alert("Nije moguće rezervisati salu " + sala + " periodicno u " + dani[danUSedmici] + ", " + sem + ", u vrijeme od " + pocetak + " do " + kraj + "!");
                 }
             } else {
-                Pozivi.rezervisiTermin(dan, mjesec, sala, pocetak, kraj, cbPeriodicno);
+                Pozivi.rezervisiTermin(dan, mjesec, sala, pocetak, kraj, cbPeriodicno, idPredavaca, idSala);
             }
         } else {
 
         }
     }
 };
+
 
 
 

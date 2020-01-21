@@ -1,0 +1,34 @@
+.meni ul li:nth-child(2) a {
+    text-decoration: underline;
+}
+
+.meni ul li:nth-child(5) a {
+    text-decoration: none;
+}
+
+#tabelaProfesora {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.polje {
+    background-color: white;
+    padding: 10px;
+}
+
+.prviRed {
+    background-color: grey;
+    padding: 10px;
+}
+
+
+.sadrzaj {
+    min-width: 200px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.meni {
+    min-width: 200px;
+}
