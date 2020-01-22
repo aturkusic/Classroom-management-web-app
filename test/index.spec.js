@@ -7,7 +7,7 @@ const db = require('../db.js');
 chai.use(chaiHttp);
 var expect = chai.expect;
 
-
+console.log("Priprema za testove, krecu uskoro.")
 before(function (done) {
   setTimeout(function () {
     done();

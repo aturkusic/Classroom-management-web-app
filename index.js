@@ -12,13 +12,6 @@ app.get("/", function (req, res) {
     res.sendFile(__dirname + "/pocetna.html");
 });
 
-db.sequelize.sync({ force: true }).then(function () {
-    inicializacija().then(function () {
-        console.log("Gotovo kreiranje tabela i ubacivanje pocetnih podataka!");
-        process.exit();
-    });
-});
-
 app.get("/osoblje", function (req, res) {
     let nizPredavaca = [];
     db.osoblje.findAll().then(function (users) {
@@ -29,7 +22,6 @@ app.get("/osoblje", function (req, res) {
     });
 
 });
-
 
 function dajSemestar(mjesec) {
     if (mjesec == 10 || mjesec == 11 || mjesec == 12 || mjesec == 1)
@@ -99,27 +91,6 @@ app.get("/sale", function (req, res) {
 
 });
 
-function inicializacija() {
-    return new Promise(function (resolve, reject) {
-        db.osoblje.create({ ime: 'Neko', prezime: 'Nekić', uloga: 'profesor' }).then(function () {
-            db.osoblje.create({ ime: 'Drugi', prezime: 'Neko', uloga: 'asistent' }).then(function () {
-                db.osoblje.create({ ime: 'Test', prezime: 'Test', uloga: 'asistent' });
-                db.termin.create({ redovni: 'false', dan: null, datum: '01.01.2020', semestar: null, pocetak: '12:00', kraj: '13:00' }).then(function () {
-                    db.termin.create({ redovni: 'true', dan: 0, datum: null, semestar: 'zimski', pocetak: '13:00', kraj: '14:00' });
-
-                    db.sala.create({ naziv: '1-11', zaduzenaOsoba: '1' }).then(function () {
-                        db.sala.create({ naziv: '1-15', zaduzenaOsoba: '2' });
-
-                        db.rezervacija.create({ termin: 1, sala: 1, osoba: 1 }).then(function () {
-                            db.rezervacija.create({ termin: 2, sala: 1, osoba: 3 });
-                        });
-                    });
-                });
-            });
-        });
-    });
-
-}
 
 function DaLiSePoklapajuTermini(pocetno1, kraj1, pocetno2, kraj2) {
     return ((pocetno1 <= pocetno2 && pocetno2 < kraj2 && kraj2 <= kraj1)
@@ -254,7 +225,12 @@ app.post("/slike", function (req, res) {
     });
 });
 
-module.exports = app.listen(8080, function () {
-    console.log('App has started');
-    app.emit("appStarted");
+db.sequelize.sync({ force: true }).then(function () {
+    db.inicializacija().then(function () {
+        app.listen(8080, 'localhost', function () {
+            console.log('App has started');
+        });
+    });
 });
+
+module.exports = app;
