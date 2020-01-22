@@ -254,4 +254,7 @@ app.post("/slike", function (req, res) {
     });
 });
 
-module.exports = app.listen(8080);
+module.exports = app.listen(8080, function () {
+    console.log('App has started');
+    app.emit("appStarted");
+});
