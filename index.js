@@ -229,6 +229,7 @@ db.sequelize.sync({ force: true }).then(function () {
     db.inicializacija().then(function () {
         app.listen(8080, 'localhost', function () {
             console.log('App has started');
+            app.emit("appStarted");
         });
     });
 });

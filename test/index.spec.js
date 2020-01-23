@@ -7,11 +7,14 @@ const db = require('../db.js');
 chai.use(chaiHttp);
 var expect = chai.expect;
 
+//********** TESTOVI SE POKRECU SA npm test u KONZOLI **********
+
 console.log("Priprema za testove, krecu uskoro.")
-before(function (done) {
-  setTimeout(function () {
-    done();
-  }, 1800);
+
+before(done => {
+  app.on("appStarted", () => {
+      done();
+  });
 });
 
 describe("Testovi", function () {
